@@ -11,6 +11,12 @@ server.get('/api/sharesPortfolio', (req, res) => {
     res.json(data);
   });
 
+server.get('/api/sharesPrices', (req, res) => {
+    const db = router.db;
+    const data = db.get('api.sharesPrices').value();
+    res.json(data);
+  });
+
 server.use(router)
 server.listen(3000, () => {
     console.log('JSON Server is running')
